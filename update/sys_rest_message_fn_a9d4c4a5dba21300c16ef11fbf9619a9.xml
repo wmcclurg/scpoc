@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{"customerOrderNumber":"${ritmNumber}","action":"freethemonkeys"}</content>
+        <function_name>NewWorkOrderPOST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>TelesoftWorkOrderIntegration [ NewWorkOrderPOST ]</qualified_name>
+        <rest_endpoint>${telesoftURL}/rest/integration/workorder</rest_endpoint>
+        <rest_message display_value="TelesoftWorkOrderIntegration">f514cce1dba21300c16ef11fbf961932</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-06 21:16:39</sys_created_on>
+        <sys_id>a9d4c4a5dba21300c16ef11fbf9619a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NewWorkOrderPOST</sys_name>
+        <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
+        <sys_update_name>sys_rest_message_fn_a9d4c4a5dba21300c16ef11fbf9619a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-06 21:16:39</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

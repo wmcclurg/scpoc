@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="item_option_new_set">
+    <item_option_new_set action="INSERT_OR_UPDATE">
+        <description>Telesoft Specific Variables to send as part of a Work Order Creation</description>
+        <display_title>false</display_title>
+        <layout>normal</layout>
+        <name>CreateTelesoftWorkOrderData</name>
+        <order>100</order>
+        <sys_class_name>item_option_new_set</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-05-23 17:30:34</sys_created_on>
+        <sys_id>8d3b43f4db121300c16ef11fbf961926</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CreateTelesoftWorkOrderData</sys_name>
+        <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
+        <sys_update_name>item_option_new_set_8d3b43f4db121300c16ef11fbf961926</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-05-23 17:30:34</sys_updated_on>
+        <title/>
+    </item_option_new_set>
+</record_update>

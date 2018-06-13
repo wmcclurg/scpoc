@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>targetedcatalog</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    // implement resource here
+	gs.info('INCOMING!!');
+	gs.info(request.pathParams.ritmNumber);
+	gs.info(request.body.dataString);
+	//is there an RITM number? 
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_145141_connect/catalogintegration/{ritmNumber}</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/{ritmNumber}</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-08 19:33:31</sys_created_on>
+        <sys_id>faa04242db621300c16ef11fbf961969</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>targetedcatalog</sys_name>
+        <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
+        <sys_update_name>sys_ws_operation_faa04242db621300c16ef11fbf961969</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-08 19:38:02</sys_updated_on>
+        <web_service_definition display_value="catalogintegration">6e978ba4db921300c16ef11fbf9619e5</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
