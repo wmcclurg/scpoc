@@ -5,8 +5,8 @@
         <description><![CDATA[<p>iPhone 7 From AT&amp;T</p>]]></description>
         <features/>
         <list_price>100</list_price>
-        <model display_value="Apple Apple iPhone 7 Plus 32BG Black">58d6ebd1db901300c16ef11fbf9619ff</model>
-        <name>Apple Apple iPhone 7 Plus 32BG Black (AT&amp;T - AppleIphone7Plus32GBBlack)</name>
+        <model display_value="">58d6ebd1db901300c16ef11fbf9619ff</model>
+        <name> (AT&amp;T - AppleIphone7Plus32GBBlack)</name>
         <out_of_stock>false</out_of_stock>
         <picture/>
         <price>100</price>
@@ -17,11 +17,13 @@
         <sys_class_name>pc_vendor_cat_item</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-02-16 19:18:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>fd1b45c2db101300c16ef11fbf9619b9</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Apple Apple iPhone 7 Plus 32BG Black (AT&amp;T - AppleIphone7Plus32GBBlack)</sys_name>
         <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
         <sys_update_name>pc_vendor_cat_item_fd1b45c2db101300c16ef11fbf9619b9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

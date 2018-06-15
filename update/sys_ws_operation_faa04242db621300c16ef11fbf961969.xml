@@ -9,12 +9,72 @@
         <http_method>POST</http_method>
         <name>targetedcatalog</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-    // implement resource here
-	gs.info('INCOMING!!');
+	// implement resource here
+	gs.info('INCOMING update from Telesoft MDSL!!');
 	gs.info(request.pathParams.ritmNumber);
-	gs.info(request.body.dataString);
-	//is there an RITM number? 
-})(request, response);]]></operation_script>
+	var ritm = request.pathParams.ritmNumber;
+	gs.info('incoming RITM number '+ritm);
+	var requestData = request.body.dataString;
+	gs.info('TheData:'+requestData);
+	var jsonObj = new global.JSON.parse(requestData);
+	if(jsonObj == null){
+		gs.info("this is unacceptable");
+	}
+	
+	//is there an RITM number?
+	var grRITM = new GlideRecord('sc_req_item');
+	grRITM.addQuery('number', ritm);
+	grRITM.query();
+	if(grRITM.hasNext()){
+		//we are only interested in a couple of elements...
+		//workOrderNotes to whatever
+		var currentStatus = jsonObj["status"];
+		var workOrderComments = jsonObj["workOrderComments"];
+		gs.info('incoming workordercomments '+workOrderComments);
+		while(grRITM.next())
+			{
+			var ritmStatus = grRITM.getDisplayValue('state');
+			gs.info('current RITM status displayed value is '+ritmStatus);
+			var ritmStatusValue = grRITM.getValue('state');
+			gs.info('current RITM status value is '+ritmStatusValue);
+			if(currentStatus != null && currentStatus.length > 0){
+				//update the RITM status act on assigned or "Closed"
+				if(currentStatus.toLowerCase()=='assigned'){
+					//on an incoming Assigned - set to "Work In Progress"
+					if(ritmStatus.indexOf('Work In Progress') == -1){
+						grRITM.state=2;
+					}
+					
+				}
+				else if(currentStatus.toLowerCase()=='closed'){
+					//on incoming Closed - set to "Closed Complete"
+					if(ritmStatus.indexOf('Closed') == -1){
+						grRITM.state=3;
+					}
+				}
+			}
+			if(workOrderComments != null && workOrderComments.length>0){
+				//ritm.work_notes workOrderComments
+				gs.info('update work_notes');
+				grRITM.comments=workOrderComments;
+				
+			}
+			//if an assigment is made -- make it here.
+			//for some fields like serial number, gsm and on close save REST payload into workNotes
+			grRITM.update();
+		}
+		response.setStatus(200);
+		var responseBody = {};
+			responseBody.customerOrderNumber = ritm;
+			responseBody.Status=ritm + ' Updated';
+			response.setBody(responseBody);
+		}
+		else{
+			response.setStatus(404);
+		}
+		
+	})
+	(request, response);]]></operation_script>
         <operation_uri>/api/x_145141_connect/catalogintegration/{ritmNumber}</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
         <produces_customized>false</produces_customized>
@@ -26,15 +86,17 @@
         <sys_class_name>sys_ws_operation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-08 19:33:31</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>faa04242db621300c16ef11fbf961969</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>targetedcatalog</sys_name>
         <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
         <sys_update_name>sys_ws_operation_faa04242db621300c16ef11fbf961969</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-08 19:38:02</sys_updated_on>
+        <sys_updated_on>2018-06-15 20:43:43</sys_updated_on>
         <web_service_definition display_value="catalogintegration">6e978ba4db921300c16ef11fbf9619e5</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

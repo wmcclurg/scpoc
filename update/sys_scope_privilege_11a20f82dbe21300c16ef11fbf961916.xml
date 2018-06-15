@@ -7,11 +7,13 @@
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-09 00:20:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>11a20f82dbe21300c16ef11fbf961916</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>CartJS.orderNow</sys_name>
         <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
         <sys_update_name>sys_scope_privilege_11a20f82dbe21300c16ef11fbf961916</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
