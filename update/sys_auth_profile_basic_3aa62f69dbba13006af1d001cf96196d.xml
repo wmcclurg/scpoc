@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_auth_profile_basic">
+    <sys_auth_profile_basic action="INSERT_OR_UPDATE">
+        <name>TelesoftConnectIntegration</name>
+        <password>rQu689wOiFRvP/6QfjLqcg==</password>
+        <sys_class_name>sys_auth_profile_basic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-19 23:57:06</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>3aa62f69dbba13006af1d001cf96196d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TelesoftConnectIntegration</sys_name>
+        <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
+        <sys_update_name>sys_auth_profile_basic_3aa62f69dbba13006af1d001cf96196d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-19 23:57:06</sys_updated_on>
+        <username>amerenintegration</username>
+    </sys_auth_profile_basic>
+</record_update>

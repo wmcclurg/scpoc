@@ -32,7 +32,9 @@
 //	userRecord.addQuery('employee_number',userEmployeeId);
 	//For now - hard code the SN user record.
 	//at some point I need to (re)set the import/transforms to get AMEREN users into the SN instance.
-	userRecord.addQuery('sys_id','71826bf03710200044e0bfc8bcbe5d3b');
+	//locate the user based on employee_number;
+	//userRecord.addQuery('sys_id','71826bf03710200044e0bfc8bcbe5d3b');
+	userRecord.addQuery('employee_number',userEmployeeId);
 	userRecord.query();
 	while(userRecord.next()){
 		requestedForUser = userRecord.sys_id;
@@ -58,12 +60,17 @@ var cartDetails = cart.orderNow(therequest);
 gs.info(cartDetails);*/
 	
 	
-	//issue an orderNow;
-	/*var cartID = "cart_" + gs.generateGUID();
-
-	var cart = new sn_sc.CartJS();
-	*/
 	var OrderRequest =
+	{
+	"sysparm_id": "f94aca10db521300c16ef11fbf96197a",
+	"sysparm_requested_for" : requestedForUser.toString(),
+	"sysparm_quantity": "1",
+	"variables":{
+		"connect_origination":"Yes"
+	}
+	};
+	
+		var testOrderRequest =
 	{
 	"sysparm_id": "f94aca10db521300c16ef11fbf96197a",
 	"sysparm_requested_for" : "71826bf03710200044e0bfc8bcbe5d3b",
@@ -72,7 +79,6 @@ gs.info(cartDetails);*/
 		"connect_origination":"Yes"
 	}
 	};
-	
 	/*	var OrderRequest =
 	{
 	'sysparm_id': '060f3afa3731300054b6a3549dbe5d3e',
@@ -122,7 +128,7 @@ gs.info(cartDetails);*/
 
 	//RITM notes - how to update
 	var responseBody = {};
-	responseBody.customerOrderNumber = responseItem;
+	responseBody.display_value = responseItem;
 	response.setBody(responseBody);
 	response.setStatus(202);
 
@@ -140,7 +146,7 @@ gs.info(cartDetails);*/
         <sys_created_on>2018-05-23 00:02:48</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>657c8368db921300c16ef11fbf961911</sys_id>
-        <sys_mod_count>91</sys_mod_count>
+        <sys_mod_count>94</sys_mod_count>
         <sys_name>catalog</sys_name>
         <sys_package display_value="Connect" source="x_145141_connect">eec7cfdddb101300c16ef11fbf961930</sys_package>
         <sys_policy/>
@@ -148,7 +154,7 @@ gs.info(cartDetails);*/
         <sys_scope display_value="Connect">eec7cfdddb101300c16ef11fbf961930</sys_scope>
         <sys_update_name>sys_ws_operation_657c8368db921300c16ef11fbf961911</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-14 17:46:19</sys_updated_on>
+        <sys_updated_on>2018-06-19 00:18:23</sys_updated_on>
         <web_service_definition display_value="catalogintegration">6e978ba4db921300c16ef11fbf9619e5</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
